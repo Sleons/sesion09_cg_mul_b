@@ -30,6 +30,7 @@ function cubo(x, y, z, px, py, pz, material, color, wf){
     cube = new THREE.Mesh(geometry, material);
     scene.add(cube);
     cube.position.set(px, py, pz);
+
     
     return cube;
 }
@@ -39,10 +40,12 @@ function init() {
     document.body.appendChild(renderer.domElement);
     scene = new THREE.Scene();
     var arrCube = [];
-    var t = 2;
+    var t = 1;
+    //Escalera
     for (var i = 0; i < 3; i++){
-        arrCube.push(cubo(t, t, t, t/2, (t/2)+(t*i), t/2, 'Basic', 'green', true));
+        arrCube.push(cubo(t, t, t, (t/2)+(t*i), (t/2)+(t*i), t/2, 'Basic', 'green', true));
     }
+
 
     const axesHelper = new THREE.AxesHelper( 10 );
     scene.add(axesHelper);
